@@ -1,5 +1,6 @@
 package com.example.demo.bootstrap;
 
+import com.example.demo.domain.InhousePart;
 import com.example.demo.domain.OutsourcedPart;
 import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
@@ -39,38 +40,74 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-       /*
-        OutsourcedPart o= new OutsourcedPart();
-        o.setCompanyName("Western Governors University");
-        o.setName("out test");
-        o.setInv(5);
-        o.setPrice(20.0);
-        o.setId(100L);
-        outsourcedPartRepository.save(o);
-        OutsourcedPart thePart=null;
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            if(part.getName().equals("out test"))thePart=part;
+//        partRepository.deleteAll();
+//        productRepository.deleteAll();
+//        outsourcedPartRepository.deleteAll();
+
+        if (outsourcedPartRepository.count() == 0 && partRepository.count() == 0) {
+            OutsourcedPart eGuitarStrings = new OutsourcedPart();
+            eGuitarStrings.setCompanyName("Guitar Center");
+            eGuitarStrings.setName("E Guitar Strings");
+            eGuitarStrings.setInv(20);
+            eGuitarStrings.setPrice(5.99);
+
+            OutsourcedPart aGuitarStrings = new OutsourcedPart();
+            aGuitarStrings.setCompanyName("Guitar Center");
+            aGuitarStrings.setName("A Guitar Strings");
+            aGuitarStrings.setInv(20);
+            aGuitarStrings.setPrice(19.99);
+
+            OutsourcedPart tuningPegs = new OutsourcedPart();
+            tuningPegs.setCompanyName("Sweetwater");
+            tuningPegs.setName("Tuning Pegs");
+            tuningPegs.setInv(20);
+            tuningPegs.setPrice(79.99);
+
+            OutsourcedPart guitarAmp = new OutsourcedPart();
+            guitarAmp.setCompanyName("Sweetwater");
+            guitarAmp.setName("Guitar Amp");
+            guitarAmp.setInv(15);
+            guitarAmp.setPrice(149.99);
+
+            outsourcedPartRepository.save(eGuitarStrings);
+            outsourcedPartRepository.save(aGuitarStrings);
+            outsourcedPartRepository.save(tuningPegs);
+            outsourcedPartRepository.save(guitarAmp);
+
+            InhousePart eGuitarBody = new InhousePart();
+            eGuitarBody.setName("Guitar Body");
+            eGuitarBody.setInv(15);
+            eGuitarBody.setPrice(199.99);
+            eGuitarBody.setId(1);
+
+            InhousePart aGuitarBody = new InhousePart();
+            aGuitarBody.setName("Guitar Body");
+            aGuitarBody.setInv(15);
+            aGuitarBody.setPrice(199.99);
+            aGuitarBody.setId(2);
+
+            partRepository.save(eGuitarBody);
+            partRepository.save(aGuitarBody);
         }
 
-        System.out.println(thePart.getCompanyName());
-        */
-        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-        for(OutsourcedPart part:outsourcedParts){
-            System.out.println(part.getName()+" "+part.getCompanyName());
-        }
+        if (productRepository.count() == 0) {
+            Product eGuitar = new Product("Electric Guitar",449.99,12);
+            Product aGuitar = new Product("Acoustic Guitar",499.99,12);
+            Product strings = new Product("Strings Bundle",25.99,5);
+            Product guitarAmp = new Product("Guitar Amp",149.99,3);
+            Product eGuitarAndAmp = new Product("Electric Guitar/Amp Bundle",799.99,3);
 
-        /*
-        Product bicycle= new Product("bicycle",100.0,15);
-        Product unicycle= new Product("unicycle",100.0,15);
-        productRepository.save(bicycle);
-        productRepository.save(unicycle);
-        */
+            productRepository.save(eGuitar);
+            productRepository.save(aGuitar);
+            productRepository.save(strings);
+            productRepository.save(guitarAmp);
+            productRepository.save(eGuitarAndAmp);
+        }
 
         System.out.println("Started in Bootstrap");
-        System.out.println("Number of Products"+productRepository.count());
+        System.out.println("Number of Products: " + productRepository.count());
         System.out.println(productRepository.findAll());
-        System.out.println("Number of Parts"+partRepository.count());
+        System.out.println("Number of Parts: " + partRepository.count());
         System.out.println(partRepository.findAll());
 
     }
