@@ -50,24 +50,32 @@ public class BootStrapData implements CommandLineRunner {
             eGuitarStrings.setName("E Guitar Strings");
             eGuitarStrings.setInv(20);
             eGuitarStrings.setPrice(5.99);
+            eGuitarStrings.setMaxInv(50);
+            eGuitarStrings.setMinInv(5);
 
             OutsourcedPart aGuitarStrings = new OutsourcedPart();
             aGuitarStrings.setCompanyName("Guitar Center");
             aGuitarStrings.setName("A Guitar Strings");
             aGuitarStrings.setInv(20);
             aGuitarStrings.setPrice(19.99);
+            aGuitarStrings.setMaxInv(50);
+            aGuitarStrings.setMinInv(5);
 
             OutsourcedPart tuningPegs = new OutsourcedPart();
             tuningPegs.setCompanyName("Sweetwater");
             tuningPegs.setName("Tuning Pegs");
             tuningPegs.setInv(20);
             tuningPegs.setPrice(79.99);
+            tuningPegs.setMaxInv(50);
+            tuningPegs.setMinInv(5);
 
             OutsourcedPart guitarAmp = new OutsourcedPart();
             guitarAmp.setCompanyName("Sweetwater");
             guitarAmp.setName("Guitar Amp");
             guitarAmp.setInv(15);
             guitarAmp.setPrice(149.99);
+            guitarAmp.setMaxInv(50);
+            guitarAmp.setMinInv(5);
 
             outsourcedPartRepository.save(eGuitarStrings);
             outsourcedPartRepository.save(aGuitarStrings);
@@ -79,12 +87,16 @@ public class BootStrapData implements CommandLineRunner {
             eGuitarBody.setInv(15);
             eGuitarBody.setPrice(199.99);
             eGuitarBody.setId(1);
+            eGuitarBody.setMaxInv(25);
+            eGuitarBody.setMinInv(3);
 
             InhousePart aGuitarBody = new InhousePart();
             aGuitarBody.setName("Guitar Body");
             aGuitarBody.setInv(15);
             aGuitarBody.setPrice(199.99);
             aGuitarBody.setId(2);
+            aGuitarBody.setMaxInv(25);
+            aGuitarBody.setMinInv(3);
 
             partRepository.save(eGuitarBody);
             partRepository.save(aGuitarBody);
