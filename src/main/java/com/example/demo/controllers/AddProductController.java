@@ -52,6 +52,21 @@ public class AddProductController {
     public String submitForm(@Valid @ModelAttribute("product") Product product, BindingResult bindingResult, Model theModel) {
         theModel.addAttribute("product", product);
 
+        for (Part p: partService.findAll()) {
+            ProductService productService = context.getBean(ProductServiceImpl.class);
+            Product product2 = new Product();
+            try {
+                product2 = productService.findById((int) product.getId());
+            } catch (Exception e) {
+                System.out.println("Error Message " + e.getMessage());
+            }
+            if (product2.getParts().contains(p)) {
+                if (p.getInv() < p.getMinInv())
+                    bindingResult.rejectValue("inv", "error", "Number of parts cannot fall below minimum inventory.");
+                break;
+            }
+        }
+
         if(bindingResult.hasErrors()){
             ProductService productService = context.getBean(ProductServiceImpl.class);
             Product product2 = new Product();
