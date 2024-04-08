@@ -61,14 +61,6 @@ public class BootStrapData implements CommandLineRunner {
             aGuitarStrings.setMaxInv(50);
             aGuitarStrings.setMinInv(5);
 
-            OutsourcedPart tuningPegs = new OutsourcedPart();
-            tuningPegs.setCompanyName("Sweetwater");
-            tuningPegs.setName("Tuning Pegs");
-            tuningPegs.setInv(20);
-            tuningPegs.setPrice(79.99);
-            tuningPegs.setMaxInv(50);
-            tuningPegs.setMinInv(5);
-
             OutsourcedPart guitarAmp = new OutsourcedPart();
             guitarAmp.setCompanyName("Sweetwater");
             guitarAmp.setName("Guitar Amp");
@@ -79,11 +71,10 @@ public class BootStrapData implements CommandLineRunner {
 
             outsourcedPartRepository.save(eGuitarStrings);
             outsourcedPartRepository.save(aGuitarStrings);
-            outsourcedPartRepository.save(tuningPegs);
             outsourcedPartRepository.save(guitarAmp);
 
             InhousePart eGuitarBody = new InhousePart();
-            eGuitarBody.setName("Guitar Body");
+            eGuitarBody.setName("Electric Guitar Body");
             eGuitarBody.setInv(15);
             eGuitarBody.setPrice(199.99);
             eGuitarBody.setId(1);
@@ -91,7 +82,7 @@ public class BootStrapData implements CommandLineRunner {
             eGuitarBody.setMinInv(3);
 
             InhousePart aGuitarBody = new InhousePart();
-            aGuitarBody.setName("Guitar Body");
+            aGuitarBody.setName("Acoustic Guitar Body");
             aGuitarBody.setInv(15);
             aGuitarBody.setPrice(199.99);
             aGuitarBody.setId(2);
