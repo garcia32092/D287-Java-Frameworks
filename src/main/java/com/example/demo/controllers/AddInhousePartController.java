@@ -41,11 +41,11 @@ public class AddInhousePartController{
         theModel.addAttribute("inhousepart",part);
 
         if (part.getInv() < part.getMinInv()) {
-            theBindingResult.rejectValue("inv", "error.inv", "Inventory must be greater than the minimum inventory.");
+            theBindingResult.rejectValue("inv", "", "Inventory must be greater than the minimum inventory.");
         }
 
         if (part.getInv() > part.getMaxInv()) {
-            theBindingResult.rejectValue("inv", "error.inv", "Inventory must be less than the maximum inventory.");
+            theBindingResult.rejectValue("inv", "", "Inventory must be less than the maximum inventory.");
         }
 
         if(theBindingResult.hasErrors()){
