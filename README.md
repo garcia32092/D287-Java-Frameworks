@@ -112,8 +112,8 @@ H. Add validation for between or at the maximum and minimum fields. The validati
     (Lines 42 - 50) add if statements to handle error messages if part inventory is less than minimum or greater than maximum
 - AddOutsourcedPartController.java
     (Lines 43 - 51) add if statements to handle error messages if part inventory is less than minimum or greater than maximum
-- AddProductController.java
-    (Lines 55 - 69) add for loop to check the product's associated parts inventory and display error message for inventory falling below minimum inventory
+- Product.java
+    (Lines 4 & 23) add validation annotation to java class
 </pre>
 ---
 I. Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.
