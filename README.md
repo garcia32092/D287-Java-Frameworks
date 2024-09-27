@@ -1,5 +1,9 @@
 # D287 – JAVA FRAMEWORKS P.A. Assignment:
 
+<strong> Scenario: </strong>You are working for a company that licenses and customizes a software application to keep track of inventory in stores. Your job as a software developer is to customize this application to meet a specific customer’s needs.
+
+For my specific project, I decided to make my own guitar shop. There are 5 products and 5 parts associated with the products. The application keeps track of the inventory of these items and allows the user to modify the inventory as needed.
+
 <strong>
 The following notes describe where in the code to find the changes I made for each of part C to J. Each note includes the prompt, file name, line number, and change.
 </strong>
