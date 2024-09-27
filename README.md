@@ -1,4 +1,4 @@
-# D287 – JAVA FRAMEWORKS P.A.
+# D287 – JAVA FRAMEWORKS P.A. Assignment:
 
 <strong>
 The following notes describe where in the code to find the changes I made for each of part C to J. Each note includes the prompt, file name, line number, and change.
@@ -131,3 +131,6 @@ J. Remove the class files for any unused validators in order to clean your code.
 - ValidDeletePart.java
     (ALL lines) remove file for unused validator
 </pre>
+
+## Images:
+![Example Image](images/home.jpg)
